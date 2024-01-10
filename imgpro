@@ -1,0 +1,34 @@
+import cv2
+img1 = cv2.imread("C:\\simrat\\winter bird.jpg",1)
+img1=cv2.resize(img1,(1200,780))
+print(img1) 
+cv2.imshow("original winter bird",img1)
+
+
+
+
+print("gray scale:")
+img2= cv2.imread("C:\\simrat\\winter bird.jpg",0)
+img2=cv2.resize(img2,(1200,780))
+print(img2) 
+cv2.imshow("gray scale winter bird",img2)
+
+
+
+path= input("enter the path:")
+print("the path is:",path)
+
+img3= cv2.imread(path,0)
+cv2.imshow("colored to gray winter bird",img3)
+
+img4=cv2.flip(img1,0) 
+cv2.imshow("flipped winter bird",img4)
+
+k = cv2.waitKey(8000)
+if k == ord("s"):
+    cv2.imwrite("C:\\newimageof winter bird.jpg", img4)
+    print("Image saved successfully!")
+elif k == ord("q"):
+    print("Image not saved.")
+cv2.destroyAllWindows()
+    
