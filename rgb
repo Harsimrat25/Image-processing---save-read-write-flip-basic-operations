@@ -12,6 +12,8 @@ b,g,r=cv2.split(img)
 cv2.imshow("blue",b)
 cv2.imshow("green",g)
 cv2.imshow("red",r)
+mr1=cv2.merge((r,g,b))
+cv2.imshow("rb",mr1)
 
 
 
