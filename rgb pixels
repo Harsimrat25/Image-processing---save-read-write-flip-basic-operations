@@ -1,0 +1,27 @@
+import cv2
+import numpy as np
+
+img=cv2.imread("C:\\simrat\\panda.jpg")
+img=cv2.resize(img,(700,700))
+cv2.imshow("panda",img)
+
+px=img[520,580]
+print("the pixel of that coordinate:",px)
+
+blue=img[520,580,0]
+print("the pixel with blue color:",blue)
+
+red=img[520,580,2]
+print("the pixel with red color:",red)
+
+green=img[520,580,1]
+print("the pixel with green color:",green)
+
+
+
+
+
+
+cv2.imshow("result",img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
