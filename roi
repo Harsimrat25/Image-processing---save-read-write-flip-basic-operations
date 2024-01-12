@@ -1,0 +1,30 @@
+
+import numpy as np
+import cv2
+
+img=cv2.imread("C:\\simrat\\winter bird.jpg")
+img=cv2.resize(img,(600,600))
+
+img2=cv2.imread("C:\\simrat\\flipped winter bird.jpg")
+img2=cv2.resize(img2,(600,600))
+
+roi=img[130:390,200:370]
+img2[230:490,300:470]=roi
+
+cv2.imshow("win",img)
+
+cv2.imshow("pan",img2)
+cv2.waitKey()
+
+'''
+#200,130- 380,390
+#430 130-     610,390
+roi=img[130:390,200:370]
+
+img[130:390,430:600]=roi
+
+
+cv2.imshow("win",img)
+cv2.waitKey()'''
+
+
