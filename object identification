@@ -1,0 +1,19 @@
+
+import numpy as np
+import cv2
+
+img=cv2.imread("C:\\simrat\\winter bird.jpg")
+img=cv2.resize(img,(600,600))
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+u_v=np.array([207,189,189])
+l_v=np.array([2,47,47])
+mask=cv2.inRange(hsv, l_v,u_v)
+    
+res=cv2.bitwise_and(img,img,mask=mask)
+cv2.imshow("frame",img)
+cv2.imshow("mask",mask)
+cv2.imshow("res",res)
+
+
+cv2.waitKey()
+
