@@ -1,0 +1,26 @@
+
+import numpy as np
+import cv2
+
+img=cv2.imread("C:\\simrat\\winter bird.jpg")
+img=cv2.resize(img,(600,600))
+img1=cv2.imread("C:\\simrat\\panda.jpg")
+img1=cv2.resize(img1,(600,600))
+cv2.imshow("bird",img)
+cv2.imshow("panda",img1)
+
+
+bitAnd=cv2.bitwise_and(img1,img)
+cv2.imshow("bitwiseand",bitAnd)
+bitOr=cv2.bitwise_or(img1,img)
+cv2.imshow("bitor",bitOr)
+bitXor=cv2.bitwise_xor(img1, img)
+cv2.imshow("bitXor",bitXor)
+bitNot=cv2.bitwise_not(img)
+cv2.imshow("bitnot",bitNot)
+bitNot1=cv2.bitwise_not(img1)
+cv2.imshow("bitnot1",bitNot1)
+
+
+cv2.waitKey()
+
