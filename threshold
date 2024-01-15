@@ -1,0 +1,26 @@
+
+import numpy as np
+import cv2
+
+img=cv2.imread("C:\\simrat\\winter bird.jpg",1)
+img=cv2.resize(img,(600,600))
+cv2.imshow("win",img)
+_,th1=cv2.threshold(img,250,78,cv2.THRESH_BINARY)
+
+cv2.imshow("ok",th1)
+
+_,th2=cv2.threshold(img,50,255,cv2.THRESH_BINARY_INV)
+cv2.imshow("okk",th2)
+
+
+_,th3=cv2.threshold(img,220,55,cv2.THRESH_TRUNC)
+cv2.imshow("okkk",th3)
+
+_,th4=cv2.threshold(img,120,55,cv2.THRESH_TOZERO)
+cv2.imshow("okkkkk",th4)
+
+_,th5=cv2.threshold(img,120,55,cv2.THRESH_TOZERO_INV)
+cv2.imshow("okkkkkk",th5)
+
+
+cv2.waitKey()
