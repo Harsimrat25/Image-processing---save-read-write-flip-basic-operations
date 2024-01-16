@@ -1,0 +1,18 @@
+
+import numpy as np
+import cv2
+
+
+img=cv2.imread("C:\\simrat\\panda.jpg")
+img=cv2.resize(img,(400,400))
+
+pd1=cv2.pyrDown(img)
+pd2=cv2.pyrUp(img)
+
+cv2.imshow("img",img)
+cv2.imshow("pd1",pd1)
+cv2.imshow("pd2",pd2)
+
+
+cv2.waitKey()
+
