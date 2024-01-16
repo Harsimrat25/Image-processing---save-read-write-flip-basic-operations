@@ -1,0 +1,43 @@
+
+import numpy as np
+import cv2
+
+imge=cv2.imread("C:\\simrat\\doraemon.jpg",1)
+imge=cv2.resize(imge,(300,300))
+cv2.imshow("original",imge)
+
+img=cv2.imread("C:\\simrat\\doraemon.jpg",0)
+img=cv2.resize(img,(300,300))
+cv2.imshow("original1",img)
+_,mask=cv2.threshold(img,220,255,cv2.THRESH_BINARY_INV)
+kernel=np.ones((3,3),np.uint16)
+o=cv2.morphologyEx(mask,cv2.MORPH_OPEN,kernel)
+oP=cv2.morphologyEx(mask,cv2.MORPH_CLOSE,kernel)
+
+x1=cv2.morphologyEx(mask,cv2.MORPH_TOPHAT,kernel)
+x2=cv2.morphologyEx(mask,cv2.MORPH_GRADIENT,kernel)
+x3=cv2.morphologyEx(mask,cv2.MORPH_BLACKHAT,kernel)
+e = cv2.erode(mask, kernel)
+
+#cv2.imshow("ker",kernel)
+cv2.imshow("mask",mask)
+cv2.imshow("erosion",e)
+cv2.imshow("OPENING",o)
+cv2.imshow("OPENINGG",oP)
+cv2.imshow("x1",x1)
+cv2.imshow("x2",x2)
+cv2.imshow("x3",x3)
+
+'''titles=['original1','mask','erosion','OPENING','OPENINGG','x1','x2','x3']
+images=[img,mask,e,o,oP,x1,x2,x3]
+
+from matplotlip import pyplot as plt
+for i in range(9):
+    plt.subplot(3,3,i+1)
+    plt.imshow(images[i],'gray')
+    plt.title(titles[i])
+    plt.xticks([]),plt.yticks([])
+    
+plt.show()'''
+
+cv2.waitKey()
