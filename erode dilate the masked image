@@ -1,0 +1,19 @@
+
+import numpy as np
+import cv2
+
+img=cv2.imread("C:\\simrat\\images.jpg",0)
+img=cv2.resize(img,(300,300))
+cv2.imshow("original1",img)
+_,mask=cv2.threshold(img,220,255,cv2.THRESH_BINARY_INV)
+kernel=np.ones((3,3),np.uint8)
+e=cv2.erode(mask,kernel)
+d=cv2.dilate(mask,kernel)
+
+
+#cv2.imshow("ker",kernel)
+cv2.imshow("mask",mask)
+cv2.imshow("erosion",e)
+cv2.imshow("dilate",d)
+
+cv2.waitKey()
